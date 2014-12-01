@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8AC6CD51A2CA79C0017B790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F2F8131A2A1A2F00167888 /* Foundation.framework */; };
+		D8F2F8121A2A1A2F00167888 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F2F8111A2A1A2F00167888 /* AppKit.framework */; };
+		D8F2F8191A2A1A2F00167888 /* QuickFind.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = D8F2F8181A2A1A2F00167888 /* QuickFind.xcscheme */; };
+		D8F2F81C1A2A1A2F00167888 /* QuickFind.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2F81B1A2A1A2F00167888 /* QuickFind.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D8F2F80E1A2A1A2F00167888 /* QuickFind.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickFind.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F2F8111A2A1A2F00167888 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		D8F2F8131A2A1A2F00167888 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		D8F2F8171A2A1A2F00167888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F2F8181A2A1A2F00167888 /* QuickFind.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = QuickFind.xcscheme; path = QuickFind.xcodeproj/xcshareddata/xcschemes/QuickFind.xcscheme; sourceTree = SOURCE_ROOT; };
+		D8F2F81A1A2A1A2F00167888 /* QuickFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickFind.h; sourceTree = "<group>"; };
+		D8F2F81B1A2A1A2F00167888 /* QuickFind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickFind.m; sourceTree = "<group>"; };
+		D8F2F8281A2A301900167888 /* IDEEditorContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEEditorContext.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8F2F80C1A2A1A2F00167888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F2F8121A2A1A2F00167888 /* AppKit.framework in Frameworks */,
+				D8AC6CD51A2CA79C0017B790 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8F2F8051A2A1A2F00167888 = {
+			isa = PBXGroup;
+			children = (
+				D8F2F8151A2A1A2F00167888 /* QuickFind */,
+				D8F2F8101A2A1A2F00167888 /* Frameworks */,
+				D8F2F80F1A2A1A2F00167888 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8F2F80F1A2A1A2F00167888 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2F80E1A2A1A2F00167888 /* QuickFind.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8F2F8101A2A1A2F00167888 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2F8111A2A1A2F00167888 /* AppKit.framework */,
+				D8F2F8131A2A1A2F00167888 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8F2F8151A2A1A2F00167888 /* QuickFind */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2F81A1A2A1A2F00167888 /* QuickFind.h */,
+				D8F2F81B1A2A1A2F00167888 /* QuickFind.m */,
+				D8F2F8161A2A1A2F00167888 /* Supporting Files */,
+				D8F2F8281A2A301900167888 /* IDEEditorContext.h */,
+			);
+			path = QuickFind;
+			sourceTree = "<group>";
+		};
+		D8F2F8161A2A1A2F00167888 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8F2F8171A2A1A2F00167888 /* Info.plist */,
+				D8F2F8181A2A1A2F00167888 /* QuickFind.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8F2F80D1A2A1A2F00167888 /* QuickFind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8F2F81F1A2A1A2F00167888 /* Build configuration list for PBXNativeTarget "QuickFind" */;
+			buildPhases = (
+				D8F2F80A1A2A1A2F00167888 /* Sources */,
+				D8F2F80B1A2A1A2F00167888 /* Resources */,
+				D8F2F80C1A2A1A2F00167888 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickFind;
+			productName = QuickFind;
+			productReference = D8F2F80E1A2A1A2F00167888 /* QuickFind.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8F2F8061A2A1A2F00167888 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Fenice;
+				TargetAttributes = {
+					D8F2F80D1A2A1A2F00167888 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = D8F2F8091A2A1A2F00167888 /* Build configuration list for PBXProject "QuickFind" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D8F2F8051A2A1A2F00167888;
+			productRefGroup = D8F2F80F1A2A1A2F00167888 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8F2F80D1A2A1A2F00167888 /* QuickFind */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8F2F80B1A2A1A2F00167888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F2F8191A2A1A2F00167888 /* QuickFind.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8F2F80A1A2A1A2F00167888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F2F81C1A2A1A2F00167888 /* QuickFind.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D8F2F81D1A2A1A2F00167888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		D8F2F81E1A2A1A2F00167888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		D8F2F8201A2A1A2F00167888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = QuickFind/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		D8F2F8211A2A1A2F00167888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = QuickFind/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8F2F8091A2A1A2F00167888 /* Build configuration list for PBXProject "QuickFind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8F2F81D1A2A1A2F00167888 /* Debug */,
+				D8F2F81E1A2A1A2F00167888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8F2F81F1A2A1A2F00167888 /* Build configuration list for PBXNativeTarget "QuickFind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8F2F8201A2A1A2F00167888 /* Debug */,
+				D8F2F8211A2A1A2F00167888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8F2F8061A2A1A2F00167888 /* Project object */;
+}
