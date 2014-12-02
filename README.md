@@ -1,14 +1,12 @@
 #QuickFind
 
-QuickFind is a Xcode Plugin to help you find/search something more quickly and more conveniently and makes Your CMD+F more powerful, in QuickFind's world, `CMD + F = (CMD + C) + (CMD + F) + (CMD + V) + (CMD + G)`, `CMD + F = (CMD + E) + (CMD + G)` and `CMD + F = (CMD + G)`
+QuickFind is a Xcode plugin to help you find/search something more conveniently and makes your `CMD + F` more powerful, in QuickFind's world, `CMD + F = (CMD + E) + (CMD + G)` and `CMD + F = (CMD + G)`
 
 ###Before:
-When you want to find something in source code, you may select some text first, and press `CMD + C` to copy, then press `CMD + F` and paste, then press Enter to find, and may press `CMD + G` to find next. (or `(CMD + E) + (CMD + G)`).
-
-![](https://raw.githubusercontent.com/qiaoxueshi/QuickFind_OLD/master/images/WithoutQuickFind.gif)
+When you want to find something in source code, you may select some text first, and press `CMD + E`, then press `CMD + G` to find next.
 
 ###Now using QuickFind:
-Now with QuickFind, you just need to select something, and press `CMD + F`, QuickFind will open the find bar, put what you selected in the find bar and start to find the next one. You can also press `CMD + F` again and again to find the next one (just forget old `CMD + F`, `CMD + E` and `CMD + G`, you may only need `CMD + F` ), just like this:
+Now with QuickFind, you just need to select something, and press `CMD + F`, QuickFind will open the find bar, put what you selected in the find bar and start to find the next one. You can also press `CMD + F` again and again to find the next one (just forget `CMD + E` and `CMD + G`, you may only need `CMD + F` ), just like this:
 
 ![](https://raw.githubusercontent.com/qiaoxueshi/QuickFind/master/images/QuickFind.gif)
 
