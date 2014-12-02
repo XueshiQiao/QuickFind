@@ -1,6 +1,6 @@
 #QuickFind
 
-QuickFind is a Xcode Plugin to help you find/search something more quickly and more conveniently and makes Your CMD+F more powerful, in QuickFind's world, `CMD + F = (CMD + C) + (CMD + F) + (CMD + V) + (CMD + G)`
+QuickFind is a Xcode Plugin to help you find/search something more quickly and more conveniently and makes Your CMD+F more powerful, in QuickFind's world, `CMD + F = (CMD + C) + (CMD + F) + (CMD + V) + (CMD + G)` and `CMD + F = (CMD + E) + (CMD + G)` and `CMD + F = (CMD + G)`
 
 ###Before:
 When you want to find something in source code, you may select some text first, and press `CMD + C` to copy, then press `CMD + F` and paste, then press Enter to find, and may press `CMD + G` to find next.
