@@ -14,6 +14,9 @@ typedef NS_ENUM(NSUInteger, QuickFindType) {
     QuickFindTypeConsoleEditor = 1
 };
 
+static NSString *const QUICKFindNextTitle = @"Quick Find Next";
+static NSString *const QUICKFindPreviousTitle = @"Quick Find Previous";
+
 static QuickFind *sharedPlugin;
 
 @interface QuickFind()
@@ -46,22 +49,29 @@ static QuickFind *sharedPlugin;
 - (id)initWithBundle:(NSBundle *)plugin
 {
     if (self = [super init]) {
-        // reference to plugin's bundle, for resource access
         _bundle = plugin;
-        
         _quickFindType = QuickFindTypeSourceEditor;
-        
-        // Create menu items, initialize UI, etc.
-        // Sample Menu Item:
+
         NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Find"];
         if (menuItem) {
             [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Quick Find" action:@selector(doMenuAction) keyEquivalent:@""];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
+            [[menuItem submenu] addItem:({
+                NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindNextTitle
+                                                                  action:@selector(quickFindAction:)
+                                                           keyEquivalent:@""];
+                menuItem.target = self;
+                menuItem;
+            })];
+            [[menuItem submenu] addItem:({
+                NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindPreviousTitle
+                                                                  action:@selector(quickFindAction:)
+                                                           keyEquivalent:@""];
+                menuItem.target = self;
+                menuItem;
+            })];
         }
         _menuItem = menuItem;
-        
+
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(selectionDidChange:)
                                                      name:NSTextViewDidChangeSelectionNotification
@@ -78,7 +88,7 @@ static QuickFind *sharedPlugin;
 - (void)selectionDidChange: (NSNotification*) notification {
     if ([[notification object] isKindOfClass:[NSTextView class]]) {
         NSTextView* textView = (NSTextView *)[notification object]; //IDEConsoleTextView and DVTSourceTextView
-        
+
         BOOL validTextView = NO;
         NSString *className = NSStringFromClass([textView class]);
         if ([className isEqualToString:@"DVTSourceTextView"]) { // I do not use isKindOfClass method , just because I don't wanna include DVTKit.framework, it's too large (20+ M) for Alcatraz to download. (The plugin manager Alcatraz will clone the whole project with git, and build plugins locally, so if the project is very large, it would be very slow.)
@@ -88,45 +98,54 @@ static QuickFind *sharedPlugin;
             self.quickFindType = QuickFindTypeConsoleEditor;
             validTextView = YES;
         }
-        
+
         if (validTextView) {
             NSArray* selectedRanges = [textView selectedRanges];
             if (selectedRanges.count > 0) {
                 NSRange selectedRange = [[selectedRanges objectAtIndex:0] rangeValue];
                 if (selectedRange.length != 0) {
                     self.selectedText = [textView.textStorage.string substringWithRange:selectedRange];
-                    NSLog(@"=======Quick Find====== text: %@", self.selectedText);
                 }
             }
         }
     }
 }
 
-- (void)doMenuAction {
-    
-    
+- (void)quickFindAction:(id)sender {
+
+    NSMenuItem *menuItem = (NSMenuItem *)sender;
+    BOOL shouldFindNext = ([menuItem.title isEqualToString:QUICKFindNextTitle]);
+
     switch (self.quickFindType) {
         case QuickFindTypeSourceEditor: {
             IDEEditorContext *context = [self currentEditorContext];
             DVTFindBar *findBar = [context _findBar];
             findBar.findString = self.selectedText  ?: @"" ;
-            [context find:self.menuItem]; //show findbar and find, the paramater is sender
+
             if (self.selectedText.length > 0) {
-                [context findNext:nil]; //highlight the next one
+                if (shouldFindNext) {
+                    [context findNext:nil];
+                } else {
+                    [context findPrevious:nil];
+                }
+            } else {
+                [context find:self.menuItem];
             }
-        }
-            break;
+        } break;
         case QuickFindTypeConsoleEditor: {
             IDEConsoleArea *consoleArea = [self consoleArea];
             DVTFindBar *findBar = [consoleArea _findBar:NO];
             findBar.findString = self.selectedText ?: @"";
-            [consoleArea find:self.menuItem]; //show findbar and find, the paramater is sender
             if (self.selectedText.length > 0) {
-                [consoleArea findNext:nil]; //highlight the next one
+                if (shouldFindNext) {
+                    [consoleArea findNext:nil];
+                } else {
+                    [consoleArea findPrevious:nil];
+                }
+            } else {
+                [consoleArea find:self.menuItem];
             }
-        }
-            
-            break;
+        } break;
         default:
             break;
     }
