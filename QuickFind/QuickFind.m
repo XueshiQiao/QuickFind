@@ -36,7 +36,7 @@ static QuickFind *sharedPlugin;
     NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
     if ([currentApplicationName isEqual:@"Xcode"]) {
         dispatch_once(&onceToken, ^{
-            sharedPlugin = [[self alloc] initWithBundle:plugin];
+            sharedPlugin = [self new];
         });
     }
 }
@@ -46,38 +46,45 @@ static QuickFind *sharedPlugin;
     return sharedPlugin;
 }
 
-- (id)initWithBundle:(NSBundle *)plugin
+- (id)init
 {
-    if (self = [super init]) {
-        _bundle = plugin;
-        _quickFindType = QuickFindTypeSourceEditor;
+    self = [super init];
+    if (!self) return nil;
 
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Find"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            [[menuItem submenu] addItem:({
-                NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindNextTitle
-                                                                  action:@selector(quickFindAction:)
-                                                           keyEquivalent:@""];
-                menuItem.target = self;
-                menuItem;
-            })];
-            [[menuItem submenu] addItem:({
-                NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindPreviousTitle
-                                                                  action:@selector(quickFindAction:)
-                                                           keyEquivalent:@""];
-                menuItem.target = self;
-                menuItem;
-            })];
-        }
-        _menuItem = menuItem;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidFinishLaunching:)
+                                                 name:NSApplicationDidFinishLaunchingNotification
+                                               object:nil];
 
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(selectionDidChange:)
-                                                     name:NSTextViewDidChangeSelectionNotification
-                                                   object:nil];
-    }
     return self;
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    _quickFindType = QuickFindTypeSourceEditor;
+    NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Find"];
+    if (menuItem) {
+        [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+        [[menuItem submenu] addItem:({
+            NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindNextTitle
+                                                              action:@selector(quickFindAction:)
+                                                       keyEquivalent:@""];
+            menuItem.target = self;
+            menuItem;
+        })];
+        [[menuItem submenu] addItem:({
+            NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindPreviousTitle
+                                                              action:@selector(quickFindAction:)
+                                                       keyEquivalent:@""];
+            menuItem.target = self;
+            menuItem;
+        })];
+    }
+    _menuItem = menuItem;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(selectionDidChange:)
+                                                 name:NSTextViewDidChangeSelectionNotification
+                                               object:nil];
 }
 
 - (void)dealloc
