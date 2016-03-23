@@ -7,78 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8AC6CD51A2CA79C0017B790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F2F8131A2A1A2F00167888 /* Foundation.framework */; };
-		D8F2F8121A2A1A2F00167888 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F2F8111A2A1A2F00167888 /* AppKit.framework */; };
-		D8F2F8191A2A1A2F00167888 /* QuickFind.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = D8F2F8181A2A1A2F00167888 /* QuickFind.xcscheme */; };
-		D8F2F81C1A2A1A2F00167888 /* QuickFind.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F2F81B1A2A1A2F00167888 /* QuickFind.m */; };
+		4BBC84D21CA2683C004969C8 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC84D11CA2683C004969C8 /* AppKit.framework */; };
+		4BBC84D41CA2683C004969C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC84D31CA2683C004969C8 /* Foundation.framework */; };
+		4BBC84D81CA2683C004969C8 /* QuickFind.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC84D71CA2683C004969C8 /* QuickFind.xcscheme */; };
+		4BBC84DB1CA2683C004969C8 /* QuickFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC84DA1CA2683C004969C8 /* QuickFind.m */; };
+		4BBC84DE1CA2683C004969C8 /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC84DD1CA2683C004969C8 /* NSObject_Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D8F2F80E1A2A1A2F00167888 /* QuickFind.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickFind.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8F2F8111A2A1A2F00167888 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		D8F2F8131A2A1A2F00167888 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		D8F2F8171A2A1A2F00167888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8F2F8181A2A1A2F00167888 /* QuickFind.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = QuickFind.xcscheme; path = QuickFind.xcodeproj/xcshareddata/xcschemes/QuickFind.xcscheme; sourceTree = SOURCE_ROOT; };
-		D8F2F81A1A2A1A2F00167888 /* QuickFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickFind.h; sourceTree = "<group>"; };
-		D8F2F81B1A2A1A2F00167888 /* QuickFind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickFind.m; sourceTree = "<group>"; };
-		D8F2F8281A2A301900167888 /* IDEEditorContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEEditorContext.h; sourceTree = "<group>"; };
+		4BBC84CE1CA2683C004969C8 /* QuickFind.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickFind.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BBC84D11CA2683C004969C8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		4BBC84D31CA2683C004969C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		4BBC84D71CA2683C004969C8 /* QuickFind.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = QuickFind.xcscheme; path = QuickFind.xcodeproj/xcshareddata/xcschemes/QuickFind.xcscheme; sourceTree = SOURCE_ROOT; };
+		4BBC84D91CA2683C004969C8 /* QuickFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickFind.h; sourceTree = "<group>"; };
+		4BBC84DA1CA2683C004969C8 /* QuickFind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickFind.m; sourceTree = "<group>"; };
+		4BBC84DC1CA2683C004969C8 /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
+		4BBC84DD1CA2683C004969C8 /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
+		4BBC84DF1CA2683C004969C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BBC84E51CA26928004969C8 /* IDEEditorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEEditorContext.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8F2F80C1A2A1A2F00167888 /* Frameworks */ = {
+		4BBC84CC1CA2683C004969C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F2F8121A2A1A2F00167888 /* AppKit.framework in Frameworks */,
-				D8AC6CD51A2CA79C0017B790 /* Foundation.framework in Frameworks */,
+				4BBC84D21CA2683C004969C8 /* AppKit.framework in Frameworks */,
+				4BBC84D41CA2683C004969C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8F2F8051A2A1A2F00167888 = {
+		4BBC84C51CA2683C004969C8 = {
 			isa = PBXGroup;
 			children = (
-				D8F2F8151A2A1A2F00167888 /* QuickFind */,
-				D8F2F8101A2A1A2F00167888 /* Frameworks */,
-				D8F2F80F1A2A1A2F00167888 /* Products */,
+				4BBC84D51CA2683C004969C8 /* QuickFind */,
+				4BBC84D01CA2683C004969C8 /* Frameworks */,
+				4BBC84CF1CA2683C004969C8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D8F2F80F1A2A1A2F00167888 /* Products */ = {
+		4BBC84CF1CA2683C004969C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8F2F80E1A2A1A2F00167888 /* QuickFind.xcplugin */,
+				4BBC84CE1CA2683C004969C8 /* QuickFind.xcplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8F2F8101A2A1A2F00167888 /* Frameworks */ = {
+		4BBC84D01CA2683C004969C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8F2F8111A2A1A2F00167888 /* AppKit.framework */,
-				D8F2F8131A2A1A2F00167888 /* Foundation.framework */,
+				4BBC84D11CA2683C004969C8 /* AppKit.framework */,
+				4BBC84D31CA2683C004969C8 /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D8F2F8151A2A1A2F00167888 /* QuickFind */ = {
+		4BBC84D51CA2683C004969C8 /* QuickFind */ = {
 			isa = PBXGroup;
 			children = (
-				D8F2F81A1A2A1A2F00167888 /* QuickFind.h */,
-				D8F2F81B1A2A1A2F00167888 /* QuickFind.m */,
-				D8F2F8161A2A1A2F00167888 /* Supporting Files */,
-				D8F2F8281A2A301900167888 /* IDEEditorContext.h */,
+				4BBC84D91CA2683C004969C8 /* QuickFind.h */,
+				4BBC84DA1CA2683C004969C8 /* QuickFind.m */,
+				4BBC84DC1CA2683C004969C8 /* NSObject_Extension.h */,
+				4BBC84DD1CA2683C004969C8 /* NSObject_Extension.m */,
+				4BBC84E51CA26928004969C8 /* IDEEditorContext.h */,
+				4BBC84DF1CA2683C004969C8 /* Info.plist */,
+				4BBC84D61CA2683C004969C8 /* Supporting Files */,
 			);
 			path = QuickFind;
 			sourceTree = "<group>";
 		};
-		D8F2F8161A2A1A2F00167888 /* Supporting Files */ = {
+		4BBC84D61CA2683C004969C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D8F2F8171A2A1A2F00167888 /* Info.plist */,
-				D8F2F8181A2A1A2F00167888 /* QuickFind.xcscheme */,
+				4BBC84D71CA2683C004969C8 /* QuickFind.xcscheme */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -86,13 +91,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8F2F80D1A2A1A2F00167888 /* QuickFind */ = {
+		4BBC84CD1CA2683C004969C8 /* QuickFind */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8F2F81F1A2A1A2F00167888 /* Build configuration list for PBXNativeTarget "QuickFind" */;
+			buildConfigurationList = 4BBC84E21CA2683C004969C8 /* Build configuration list for PBXNativeTarget "QuickFind" */;
 			buildPhases = (
-				D8F2F80A1A2A1A2F00167888 /* Sources */,
-				D8F2F80B1A2A1A2F00167888 /* Resources */,
-				D8F2F80C1A2A1A2F00167888 /* Frameworks */,
+				4BBC84CA1CA2683C004969C8 /* Sources */,
+				4BBC84CB1CA2683C004969C8 /* Resources */,
+				4BBC84CC1CA2683C004969C8 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -100,64 +105,65 @@
 			);
 			name = QuickFind;
 			productName = QuickFind;
-			productReference = D8F2F80E1A2A1A2F00167888 /* QuickFind.xcplugin */;
+			productReference = 4BBC84CE1CA2683C004969C8 /* QuickFind.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D8F2F8061A2A1A2F00167888 /* Project object */ = {
+		4BBC84C61CA2683C004969C8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Fenice;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = chars;
 				TargetAttributes = {
-					D8F2F80D1A2A1A2F00167888 = {
-						CreatedOnToolsVersion = 6.1;
+					4BBC84CD1CA2683C004969C8 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = D8F2F8091A2A1A2F00167888 /* Build configuration list for PBXProject "QuickFind" */;
+			buildConfigurationList = 4BBC84C91CA2683C004969C8 /* Build configuration list for PBXProject "QuickFind" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D8F2F8051A2A1A2F00167888;
-			productRefGroup = D8F2F80F1A2A1A2F00167888 /* Products */;
+			mainGroup = 4BBC84C51CA2683C004969C8;
+			productRefGroup = 4BBC84CF1CA2683C004969C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8F2F80D1A2A1A2F00167888 /* QuickFind */,
+				4BBC84CD1CA2683C004969C8 /* QuickFind */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D8F2F80B1A2A1A2F00167888 /* Resources */ = {
+		4BBC84CB1CA2683C004969C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F2F8191A2A1A2F00167888 /* QuickFind.xcscheme in Resources */,
+				4BBC84D81CA2683C004969C8 /* QuickFind.xcscheme in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D8F2F80A1A2A1A2F00167888 /* Sources */ = {
+		4BBC84CA1CA2683C004969C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F2F81C1A2A1A2F00167888 /* QuickFind.m in Sources */,
+				4BBC84DB1CA2683C004969C8 /* QuickFind.m in Sources */,
+				4BBC84DE1CA2683C004969C8 /* NSObject_Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D8F2F81D1A2A1A2F00167888 /* Debug */ = {
+		4BBC84E01CA2683C004969C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -175,15 +181,17 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -195,7 +203,7 @@
 			};
 			name = Debug;
 		};
-		D8F2F81E1A2A1A2F00167888 /* Release */ = {
+		4BBC84E11CA2683C004969C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,10 +220,12 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -226,37 +236,31 @@
 			};
 			name = Release;
 		};
-		D8F2F8201A2A1A2F00167888 /* Debug */ = {
+		4BBC84E31CA2683C004969C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = QuickFind/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zaker.chars.QuickFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
 		};
-		D8F2F8211A2A1A2F00167888 /* Release */ = {
+		4BBC84E41CA2683C004969C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = QuickFind/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zaker.chars.QuickFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -265,25 +269,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8F2F8091A2A1A2F00167888 /* Build configuration list for PBXProject "QuickFind" */ = {
+		4BBC84C91CA2683C004969C8 /* Build configuration list for PBXProject "QuickFind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8F2F81D1A2A1A2F00167888 /* Debug */,
-				D8F2F81E1A2A1A2F00167888 /* Release */,
+				4BBC84E01CA2683C004969C8 /* Debug */,
+				4BBC84E11CA2683C004969C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8F2F81F1A2A1A2F00167888 /* Build configuration list for PBXNativeTarget "QuickFind" */ = {
+		4BBC84E21CA2683C004969C8 /* Build configuration list for PBXNativeTarget "QuickFind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8F2F8201A2A1A2F00167888 /* Debug */,
-				D8F2F8211A2A1A2F00167888 /* Release */,
+				4BBC84E31CA2683C004969C8 /* Debug */,
+				4BBC84E41CA2683C004969C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D8F2F8061A2A1A2F00167888 /* Project object */;
+	rootObject = 4BBC84C61CA2683C004969C8 /* Project object */;
 }

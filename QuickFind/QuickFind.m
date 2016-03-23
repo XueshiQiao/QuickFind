@@ -17,8 +17,6 @@ typedef NS_ENUM(NSUInteger, QuickFindType) {
 static NSString *const QUICKFindNextTitle = @"Quick Find Next";
 static NSString *const QUICKFindPreviousTitle = @"Quick Find Previous";
 
-static QuickFind *sharedPlugin;
-
 @interface QuickFind()
 
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
@@ -30,17 +28,6 @@ static QuickFind *sharedPlugin;
 
 @implementation QuickFind
 
-+ (void)pluginDidLoad:(NSBundle *)plugin
-{
-    static dispatch_once_t onceToken;
-    NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
-    if ([currentApplicationName isEqual:@"Xcode"]) {
-        dispatch_once(&onceToken, ^{
-            sharedPlugin = [[self alloc] initWithBundle:plugin];
-        });
-    }
-}
-
 + (instancetype)sharedPlugin
 {
     return sharedPlugin;
@@ -49,35 +36,49 @@ static QuickFind *sharedPlugin;
 - (id)initWithBundle:(NSBundle *)plugin
 {
     if (self = [super init]) {
-        _bundle = plugin;
-        _quickFindType = QuickFindTypeSourceEditor;
-
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Find"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            [[menuItem submenu] addItem:({
-                NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindNextTitle
-                                                                  action:@selector(quickFindAction:)
-                                                           keyEquivalent:@""];
-                menuItem.target = self;
-                menuItem;
-            })];
-            [[menuItem submenu] addItem:({
-                NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindPreviousTitle
-                                                                  action:@selector(quickFindAction:)
-                                                           keyEquivalent:@""];
-                menuItem.target = self;
-                menuItem;
-            })];
-        }
-        _menuItem = menuItem;
-
+        // reference to plugin's bundle, for resource access
+        self.bundle = plugin;
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(selectionDidChange:)
-                                                     name:NSTextViewDidChangeSelectionNotification
+                                                 selector:@selector(didApplicationFinishLaunchingNotification:)
+                                                     name:NSApplicationDidFinishLaunchingNotification
                                                    object:nil];
     }
     return self;
+}
+
+- (void)didApplicationFinishLaunchingNotification:(NSNotification*)noti
+{
+    //removeObserver
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
+    
+    // Create menu items, initialize UI, etc.
+    // Sample Menu Item:
+    NSMenuItem *findItem = [[NSApp mainMenu] itemWithTitle:@"Find"];
+    if (findItem) {
+        [[findItem submenu] addItem:[NSMenuItem separatorItem]];
+        
+        NSMenu *quickFindMenu = [[NSMenu alloc] initWithTitle:@"Quick Find"];
+        
+        NSMenuItem *menuItem;
+        menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindNextTitle action:@selector(quickFindAction:) keyEquivalent:@""];
+        [menuItem setTarget:self];
+        [quickFindMenu addItem:menuItem];
+        
+        menuItem = [[NSMenuItem alloc] initWithTitle:QUICKFindPreviousTitle action:@selector(quickFindAction:) keyEquivalent:@""];
+        [menuItem setTarget:self];
+        [quickFindMenu addItem:menuItem];
+        
+        NSMenuItem *quickFindMenuItem = [[NSMenuItem alloc] initWithTitle:@"Quick Find" action:nil keyEquivalent:@""];
+        [quickFindMenuItem setSubmenu:quickFindMenu];
+        [[findItem submenu] addItem:quickFindMenuItem];
+    }
+    
+    _menuItem = findItem;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(selectionDidChange:)
+                                                 name:NSTextViewDidChangeSelectionNotification
+                                               object:nil];
 }
 
 - (void)dealloc
@@ -85,10 +86,11 @@ static QuickFind *sharedPlugin;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)selectionDidChange: (NSNotification*) notification {
+- (void)selectionDidChange: (NSNotification*) notification
+{
     if ([[notification object] isKindOfClass:[NSTextView class]]) {
         NSTextView* textView = (NSTextView *)[notification object]; //IDEConsoleTextView and DVTSourceTextView
-
+        
         BOOL validTextView = NO;
         NSString *className = NSStringFromClass([textView class]);
         if ([className isEqualToString:@"DVTSourceTextView"]) { // I do not use isKindOfClass method , just because I don't wanna include DVTKit.framework, it's too large (20+ M) for Alcatraz to download. (The plugin manager Alcatraz will clone the whole project with git, and build plugins locally, so if the project is very large, it would be very slow.)
@@ -98,7 +100,7 @@ static QuickFind *sharedPlugin;
             self.quickFindType = QuickFindTypeConsoleEditor;
             validTextView = YES;
         }
-
+        
         if (validTextView) {
             NSArray* selectedRanges = [textView selectedRanges];
             if (selectedRanges.count > 0) {
@@ -111,17 +113,17 @@ static QuickFind *sharedPlugin;
     }
 }
 
-- (void)quickFindAction:(id)sender {
-
+- (void)quickFindAction:(id)sender
+{
     NSMenuItem *menuItem = (NSMenuItem *)sender;
     BOOL shouldFindNext = ([menuItem.title isEqualToString:QUICKFindNextTitle]);
-
+    
     switch (self.quickFindType) {
         case QuickFindTypeSourceEditor: {
             IDEEditorContext *context = [self currentEditorContext];
             DVTFindBar *findBar = [context _findBar];
             findBar.findString = self.selectedText  ?: @"" ;
-
+            
             if (self.selectedText.length > 0) {
                 if (shouldFindNext) {
                     [context findNext:nil];
